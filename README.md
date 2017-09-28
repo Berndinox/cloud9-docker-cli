@@ -7,7 +7,7 @@ Why combine Cloud9 with alpine?
 > so you can Edit your compose files, mount your Docker-Socket and spin up new Services/Stacks with ease.
 
 Compose-V3 Example
-'''
+```
 version: '3'
 
 services:
@@ -25,4 +25,4 @@ services:
 networks:
   default:
     driver: overlay
-'''
+```
