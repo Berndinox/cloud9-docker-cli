@@ -28,4 +28,4 @@ networks:
 ```
 
 Preview:
-![alt text](https://raw.githubusercontent.com/Berndinox/cloud9-docker-cli/master/cloud9.png)
+
