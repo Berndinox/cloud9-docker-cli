@@ -2,7 +2,7 @@ FROM alpine:3.5
 
 # ------------------------------------------------------------------------------
 # Install: Base, Node, Docker Client
-RUN apk update && apk add --no-cache g++ make python tmux nodejs bash ca-certificates curl git zip unzip && update-ca-certificates && apk add openssl \
+RUN apk update && apk add --no-cache g++ make python jq tmux nodejs bash ca-certificates curl git zip unzip && update-ca-certificates && apk add openssl \
  && curl -sl https://download.docker.com/linux/static/stable/x86_64/docker-17.06.2-ce.tgz --output docker-17.06.2-ce.tgz \
  && tar xzvf docker-17.06.2-ce.tgz && rm docker-17.06.2-ce.tgz && cp docker/* /usr/bin/
 
