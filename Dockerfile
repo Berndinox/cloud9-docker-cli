@@ -1,9 +1,8 @@
-FROM postgres:10-alpine
+FROM alpine:3.5
 
 # ------------------------------------------------------------------------------
-# Install: Base, Node, Docker Client
-RUN apk update && apk add --no-cache g++ make python jq tmux nodejs bash ca-certificates curl git zip unzip && update-ca-certificates
-
+# Install: Base, Node, openssh
+RUN apk update && apk add --no-cache g++ make python jq tmux nodejs openssh bash ca-certificates curl git zip unzip && update-ca-certificates && apk add openssl
 # ------------------------------------------------------------------------------
 # Install Cloud9
 RUN git clone https://github.com/c9/core.git /cloud9 \
@@ -34,4 +33,3 @@ ENV PASSWORD password
 # ------------------------------------------------------------------------------
 # Start cloud9
 ENTRYPOINT ["sh", "-c", "/usr/bin/node /cloud9/server.js -l 0.0.0.0 -p 8000 -w /workspace -a $USERNAME:$PASSWORD"]
-CMD ["docker-entrypoint.sh"]
